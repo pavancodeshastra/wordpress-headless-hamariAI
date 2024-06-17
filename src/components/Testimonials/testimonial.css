@@ -1,0 +1,26 @@
+.testimonial-content {
+    margin-top: 15px;
+  }
+  
+  .profile-image {
+    border-radius: 50%;
+  }
+  
+  .carousel-indicators {
+    position: static;
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  
+  .carousel-indicators li {
+    background-color: #000;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+  }
+  
+  .carousel-indicators .active {
+    background-color: #555;
+  }
+  

@@ -1,0 +1,560 @@
+[3:47 PM] Viral Jain
+Frontend : 
+import React from 'react';
+import '../css/custom.css'; // Assuming you will move your CSS here
+import text_generator from "../images/text-generator.jpg"
+import icons_7 from "../images/icons/icon-7.svg"
+import icons_8 from "../images/icons/icon-8.svg"
+import icons_9 from "../images/icons/icon-9.svg"
+import icons_10 from "../images/icons/icon-10.svg"
+import icons_11 from "../images/icons/icon-11.svg"
+import icons_12 from "../images/icons/icon-12.svg"
+import test_png from "../images/v6sP-test.png"
+import payment from "../images/Payments100.jpg"
+import multilingual from "../images/NZBW-multilingual.png"
+import affiliate from "../images/RAhq-affiliate-system.png"
+import easy_export from "../images/mPWB-easy-export.png"
+import support_platform from "../images/rIwa-support-platform.png"
+import { useEffect, useState } from 'react';
+ 
+ 
+ 
+ 
+ 
+const FeaturesSection = () => {
+  const [posts, setPosts] = useState([]);
+ 
+  useEffect(()=> {
+    const fetchApi = async () => {
+      const response = await fetch('http://localhost:4000/fetch-features', {
+        method: 'GET',
+        headers: {
+          "content-type": "application/json",
+        },
+      });
+      const result = await response.json();
+      setPosts(result.transformedPosts);
+    }
+    fetchApi();
+  }, []);
+ 
+  console.log(posts);
+ 
+  return (
+    <section id="features" className="features-sec">
+    <div className="container">
+      <div className="row">
+        <div className="col-md-12 text-center">
+          <h2 className="heading">The future of AI.</h2>
+        </div>
+      </div>
+      <div className="row mt-5">
+       
+        {posts.map((post, index)=> (
+          <div className="col-md-6 col-lg-4">
+          <div className="features-box">
+            <div className="square-icon">
+              <img src = {post.icon} alt = 'icon'/>
+            </div>
+            <div>
+              <h3>{post.title}</h3>
+              <p>{post.description}</p>
+            </div>
+          </div>
+        </div>
+        ))}
+       
+      </div>
+      <div className="ai-tab-box">
+        <div className="row">
+          <div className="col-md-12">
+            <div className="ai-tab-nav">
+              <ul className="nav nav-pills mb-3" id="pills-tab" role="tablist">
+                <li className="nav-item" role="presentation">
+                  <button
+                    className="nav-link active"
+                    id="pills-home-tab"
+                    data-bs-toggle="pill"
+                    data-bs-target="#pills-btn-1"
+                    type="button"
+                    role="tab"
+                    aria-controls="pills-home"
+                    aria-selected="true"
+                  >
+                    AI Text <br /> Generator
+                  </button>
+                </li>
+                <li className="nav-item" role="presentation">
+                  <button
+                    className="nav-link"
+                    id="pills-profile-tab"
+                    data-bs-toggle="pill"
+                    data-bs-target="#pills-btn-2"
+                    type="button"
+                    role="tab"
+                    aria-controls="pills-profile"
+                    aria-selected="false"
+                  >
+                    AI Image <br /> Generator
+                  </button>
+                </li>
+                <li className="nav-item" role="presentation">
+                  <button
+                    className="nav-link"
+                    id="pills-contact-tab"
+                    data-bs-toggle="pill"
+                    data-bs-target="#pills-btn-3"
+                    type="button"
+                    role="tab"
+                    aria-controls="pills-contact"
+                    aria-selected="false"
+                  >
+                    AI Code <br /> Generator
+                  </button>
+                </li>
+                <li className="nav-item" role="presentation">
+                  <button
+                    className="nav-link"
+                    id="pills-disabled-tab"
+                    data-bs-toggle="pill"
+                    data-bs-target="#pills-btn-4"
+                    type="button"
+                    role="tab"
+                    aria-controls="pills-disabled"
+                    aria-selected="false"
+                  >
+                    AI Chat Bot
+                  </button>
+                </li>
+                <li className="nav-item" role="presentation">
+                  <button
+                    className="nav-link"
+                    id="pills-contact-tab"
+                    data-bs-toggle="pill"
+                    data-bs-target="#pills-btn-5"
+                    type="button"
+                    role="tab"
+                    aria-controls="pills-contact"
+                    aria-selected="false"
+                  >
+                    AI Speech <br /> To Text
+                  </button>
+                </li>
+                <li className="nav-item" role="presentation">
+                  <button
+                    className="nav-link"
+                    id="pills-contact-tab"
+                    data-bs-toggle="pill"
+                    data-bs-target="#pills-btn-6"
+                    type="button"
+                    role="tab"
+                    aria-controls="pills-contact"
+                    aria-selected="false"
+                  >
+                    Empower <br />
+                    Your Message <br /> with AI
+                  </button>
+                </li>
+              </ul>
+              <div className="tab-content" id="pills-tabContent">
+                <div
+                  className="tab-pane fade show active"
+                  id="pills-btn-1"
+                  role="tabpanel"
+                  aria-labelledby="pills-home-tab"
+                  tabIndex={0}
+                >
+                  <div className="row">
+                    <div className="col-md-6 pe-4">
+                      <div className="tab-box">
+                        <div>
+                          <span className="btn-highlight">
+                            <span className="">
+                              Say goodbye to writer’s block
+                            </span>
+                            <span className="dot">
+                              <i className="fa-solid fa-circle" />
+                            </span>
+                            <span>AI</span>
+                          </span>
+                        </div>
+                        <div className="bottom-text">
+                          <h3 className="heading">
+                            Intelligent Writing Assistant
+                          </h3>
+                          <p className="mt-4">
+                            Writer is designed to help you{" "}
+                            <strong>
+                              generate high-quality texts instantly,
+                            </strong>{" "}
+                            without breaking a sweat. With our intuitive interface
+                            and powerful features, you can easily edit, export or
+                            publish your AI-generated result.
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="col-md-6 ps-md-4">
+                      <div className="tab-box tab-box-right">
+                        <div>
+                          <img
+                            src={text_generator}
+                            className="img-fluid img-all"
+                            alt=""
+                          />
+                        </div>
+                        <div className="text-center mt-4">
+                          <h3 className="small-heading">
+                            Generate, edit, export.
+                          </h3>
+                          <p className="small-text">Powered by OpenAI.</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  className="tab-pane fade"
+                  id="pills-btn-2"
+                  role="tabpanel"
+                  aria-labelledby="pills-profile-tab"
+                  tabIndex={0}
+                >
+                  <h1>AI Image Generator</h1>
+                </div>
+                <div
+                  className="tab-pane fade"
+                  id="pills-btn-3"
+                  role="tabpanel"
+                  aria-labelledby="pills-contact-tab"
+                  tabIndex={0}
+                >
+                  <h1>AI Code Generator</h1>
+                </div>
+                <div
+                  className="tab-pane fade"
+                  id="pills-btn-4"
+                  role="tabpanel"
+                  aria-labelledby="pills-disabled-tab"
+                  tabIndex={0}
+                >
+                  <h1>AI Chat Bot</h1>
+                </div>
+                <div
+                  className="tab-pane fade"
+                  id="pills-btn-5"
+                  role="tabpanel"
+                  aria-labelledby="pills-disabled-tab"
+                  tabIndex={0}
+                >
+                  <h1>AI Speech To Text</h1>
+                </div>
+                <div
+                  className="tab-pane fade"
+                  id="pills-btn-6"
+                  role="tabpanel"
+                  aria-labelledby="pills-disabled-tab"
+                  tabIndex={0}
+                >
+                  <h1>Empower Your Message with AI</h1>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="row my-md-5 py-md-5">
+        <div className="col-md-4 product">
+          <div className="product-box">
+            <div className="dots" />
+            <div>
+              <h4>Digital Agencies</h4>
+            </div>
+          </div>
+        </div>
+        <div className="col-md-4 product">
+          <div className="product-box">
+            <div className="dots" />
+            <div>
+              <h4>Product Designers</h4>
+            </div>
+          </div>
+        </div>
+        <div className="col-md-4 product">
+          <div className="product-box">
+            <div className="dots" />
+            <div>
+              <h4>Enterpreneurs</h4>
+            </div>
+          </div>
+        </div>
+        <div className="col-md-4 product">
+          <div className="product-box">
+            <div className="dots" />
+            <div>
+              <h4>Copywriters</h4>
+            </div>
+          </div>
+        </div>
+        <div className="col-md-4 product">
+          <div className="product-box">
+            <div className="dots" />
+            <div>
+              <h4>Digital Marketers</h4>
+            </div>
+          </div>
+        </div>
+        <div className="col-md-4 product">
+          <div className="product-box">
+            <div className="dots" />
+            <div>
+              <h4>Developers</h4>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="row my-5">
+        <div className="col-md-12">
+          <div className="custom-templates">
+            <div className="row">
+              <div className="col-md-12 text-center">
+                <div className="ct-btn">
+                  <span className="btn-highlight">
+                    <span>Custom</span>
+                    <span className="dot">
+                      <i className="fa-solid fa-circle" />
+                    </span>
+                    <span className="opt">Prompts</span>
+                  </span>
+                </div>
+                <h3>Custom Templates.</h3>
+              </div>
+            </div>
+            <div className="custom-tab-navbar">
+              <ul className="nav">
+                <li className="nav-item">
+                  <button className="btn filter-button active" data-filter="all">
+                    All
+                  </button>
+                </li>
+                <li className="nav-item">
+                  <button className="btn filter-button" data-filter="blog">
+                    Blog
+                  </button>
+                </li>
+                <li className="nav-item">
+                  <button className="btn filter-button" data-filter="ecommerce">
+                    Ecommerce
+                  </button>
+                </li>
+                <li className="nav-item">
+                  <button className="btn filter-button" data-filter="development">
+                    Development
+                  </button>
+                </li>
+              </ul>
+              <div className="row">
+                <div className="col-md-12">
+                  <div className="custom-tab-content">
+                    <div className="row">
+                      <div className="col-lg-4 filter blog">
+                        <div className="custom-temp-service">
+                          <div className="icon-square">
+                            <img src={icons_7} alt="" />
+                          </div>
+                          <h3 className="heading">Post Title Generator</h3>
+                          <p className="para">
+                            Get captivating post titles instantly with our title
+                            generator. Boost engagement and save time.
+                          </p>
+                        </div>
+                      </div>
+                      <div className="col-lg-4 filter blog">
+                        <div className="custom-temp-service ">
+                          <div className="icon-square">
+                            <img src={icons_8} alt="" />
+                          </div>
+                          <h3 className="heading">Summarize Text</h3>
+                          <p className="para">
+                            Effortlessly condense large text into shorter
+                            summaries. Save time and increase productivity.
+                          </p>
+                        </div>
+                      </div>
+                      <div className="col-lg-4 filter ecommerce">
+                        <div className="custom-temp-service ">
+                          <div className="icon-square">
+                            <img src={icons_9} alt="" />
+                          </div>
+                          <h3 className="heading">Product Description</h3>
+                          <p className="para">
+                            Easily create compelling product descriptions that
+                            sell. Increase conversions and boost sales.
+                          </p>
+                        </div>
+                      </div>
+                      <div className="col-lg-4 filter ecommerce">
+                        <div className="custom-temp-service ">
+                          <div className="icon-square">
+                            <img src={icons_10} alt="" />
+                          </div>
+                          <h3 className="heading">Testimonial Review</h3>
+                          <p className="para">
+                            Instantly generate authentic testimonials. Build trust
+                            and credibility with genuine reviews.
+                          </p>
+                        </div>
+                      </div>
+                      <div className="col-lg-4 filter development">
+                        <div className="custom-temp-service">
+                          <div className="icon-square">
+                            <img src={icons_11} alt="" />
+                          </div>
+                          <h3 className="heading">Problem Agitate Solution</h3>
+                          <p className="para">
+                            Identify and solve problems efficiently. Streamline
+                            solutions and increase productivity.
+                          </p>
+                        </div>
+                      </div>
+                      <div className="col-lg-4 filter development">
+                        <div className="custom-temp-service">
+                          <div className="icon-square">
+                            <img src={icons_12} alt="" />
+                          </div>
+                          <h3 className="heading">Pros &amp; Cons</h3>
+                          <p className="para">
+                            Make informed decisions with ease. Generate unbiased
+                            pros and cons lists that help you weigh options and
+                            make better choices.
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="row mt-5">
+        <div className="col-lg-12">
+          <div className="magic-tools">
+            <div className="row">
+              <div className="col-md-12 text-center">
+                <h3>Magic Tools.</h3>
+                <p className="col-md-6 mx-auto mt-3">
+                  MagicAI has all the tools you need to create and manage your
+                  SaaS platform.
+                </p>
+              </div>
+            </div>
+            <div className="row mt-md-5">
+              <div className="col-lg-4">
+                <div className="magic-tool-service">
+                  <div>
+                    <img
+                      src={test_png}
+                      className="img-fluid"
+                      alt=""
+                    />
+                  </div>
+                  <h3 className="heading">Advanced Dashboard</h3>
+                  <p className="para">
+                    Track a wide range of data points, including user traffic and
+                    sales.
+                  </p>
+                </div>
+              </div>
+              <div className="col-lg-4">
+                <div className="magic-tool-service">
+                  <div>
+                    <img
+                      src={payment}
+                      className="img-fluid"
+                      alt=""
+                    />
+                  </div>
+                  <h3 className="heading">Payment Gateways</h3>
+                  <p className="para">
+                    Securely process credit card or other electronic payment
+                    methods.
+                  </p>
+                </div>
+              </div>
+              <div className="col-lg-4">
+                <div className="magic-tool-service">
+                  <div>
+                    <img
+                      src={multilingual}
+                      className="img-fluid"
+                      alt=""
+                    />
+                  </div>
+                  <h3 className="heading">Multilingual</h3>
+                  <p className="para">
+                    Ability to understand and generate content in different
+                    languages.
+                  </p>
+                </div>
+              </div>
+              <div className="col-lg-4">
+                <div className="magic-tool-service">
+                  <div>
+                    <img
+                      src={affiliate}
+                      className="img-fluid"
+                      alt=""
+                    />
+                  </div>
+                  <h3 className="heading">Affiliate System</h3>
+                  <p className="para">
+                    Ability to invite friends, and earn commission from their
+                    first purchase.
+                  </p>
+                </div>
+              </div>
+              <div className="col-lg-4">
+                <div className="magic-tool-service">
+                  <div>
+                    <img
+                      src={easy_export}
+                      className="img-fluid"
+                      alt=""
+                    />
+                  </div>
+                  <h3 className="heading">Easy Export</h3>
+                  <p className="para">
+                    Export generated content as plain text, PDF, Word or HTML
+                    easily.
+                  </p>
+                </div>
+              </div>
+              <div className="col-lg-4">
+                <div className="magic-tool-service">
+                  <div>
+                    <img
+                  src={support_platform}
+                      className="img-fluid"
+                      alt=""
+                    />
+                  </div>
+                  <h3 className="heading">Support Platform</h3>
+                  <p className="para">
+                    Access and mage support tickets from your dashboard.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+ 
+  );
+};
+ 
+export default FeaturesSection;
+ 
