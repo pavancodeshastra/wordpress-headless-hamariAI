@@ -28,7 +28,7 @@ function App() {
     const getHeader = async () => {
       try {
         const response = await axios.get(
-          "http://localhost:5000/get-heared-content",
+          `${process.env.REACT_APP_API_KEY}get-heared-content`,
           {
             headers: {
               "Content-Type": "application/json",
@@ -51,7 +51,7 @@ function App() {
     const getFooter = async () => {
       try {
         const response = await axios.get(
-          "http://localhost:5000/get-footer-content",
+            `${process.env.REACT_APP_API_KEY}get-footer-content`,
           {
             headers: {
               "Content-Type": "application/json",
